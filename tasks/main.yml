@@ -1,0 +1,5 @@
+---
+- name: Import download&unpack task
+  ansible.builtin.import_tasks: download&unpack.yml
+- name: Import show_version task
+  ansible.builtin.import_tasks: show_version.yml

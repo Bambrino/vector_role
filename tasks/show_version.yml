@@ -1,0 +1,10 @@
+---
+- name: Get vector version
+  ansible.builtin.command: "vector --version"
+  register: vector_info
+  changed_when: false
+
+- name: Print version
+  ansible.builtin.debug:
+    var: vector_info.stdout
+  changed_when: false

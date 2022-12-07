@@ -1,0 +1,5 @@
+---
+# defaults file for vector_role
+
+vector_version: "0.22.2"
+vector_arch: "x86_64"

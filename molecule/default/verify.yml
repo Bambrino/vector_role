@@ -1,0 +1,18 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: 'Include vars'
+    ansible.builtin.include_vars:
+      file: ../../defaults/main.yml
+      name: vector
+  - name: 'Get version'
+    ansible.builtin.command: vector \--version
+    changed_when: false
+    register: vector_std
+  - name: 'Check version'
+    ansible.builtin.assert:
+      that:
+        - "'{{ vector.vector_version }}' in vector_std.stdout"
+      success_msg: "{{ vector_std.stdout }}"

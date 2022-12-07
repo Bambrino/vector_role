@@ -1,0 +1,5 @@
+---
+# vars file for vector_role
+
+vector_home: "/opt/vector/"
+light_home: "/opt/lighthouse-master"
